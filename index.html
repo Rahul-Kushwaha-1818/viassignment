@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="styels.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Logo</div>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search employees..." oninput="searchEmployees()">
+            <nav class="nav-menu">
+                <div class="hamburger" onclick="toggleMenu()">☰</div>
+                <ul class="menu">
+                    <li><a href="#" onclick="showPage('register')">Employee Registration</a></li>
+                    <li><a href="#" onclick="showPage('list')">Employee Listing</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Registration Page -->
+        <section id="register" class="page ">
+            <div class="Registration">
+                <div class="container">
+                    <div class="content">
+                        <img src="https://res.cloudinary.com/debbsefe/image/upload/f_auto,c_fill,dpr_auto,e_grayscale/image_fz7n7w.webp"
+                            alt="header-image" class="cld-responsive">
+                        <h1 class="form-title">Register Here</h1>
+                        <form id="registrationForm" onsubmit="registerEmployee(event)">
+                            <input type="text" id="name" placeholder="Name" required>
+                            <input type="text" id="position" placeholder="Position" required>
+                            <textarea id="about" placeholder="About" required></textarea>
+                            <input type="date" id="joining_date" required><br>
+                            <button type="submit">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Listing Page -->
+        <section id="list" class="page list-page hidden">
+            <h1>Employee Listing</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>About</th>
+                        <th>Joining Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeTable"></tbody>
+            </table>
+            <div class="pagination-main">
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Rahul Kushwaha</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
